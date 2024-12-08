@@ -29,9 +29,17 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('login') }}">Add post</a>
                                     </li>
+                                    <li>
+                                        <a class="nav-link" href="{{ route('login') }}">My posts</a>
+                                    </li>
                                 @endif
                             @else
-                                <a class="nav-link" href="{{route('posts.create')}}">Add Post</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('posts.create')}}">Add Post</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="{{ route('posts.my_index') }}">My posts</a>
+                                </li>
                             @endguest
                         </div>
                     </ul>

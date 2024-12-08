@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+            $table->date('date');
 
             $table->UnsignedBigInteger('user_id')->nullable();
             $table->index('user_id');

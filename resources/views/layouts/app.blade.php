@@ -32,7 +32,6 @@
                     <ul class="navbar-nav me-auto">
                         <div class="navbar-nav">
                             <a class="nav-link active" href="{{route('posts.index')}}">Home <span class="sr-only"></span></a>
-                            <a class="nav-link" href="{{route('posts.create')}}">Add Post</a>
                         </div>
                     </ul>
 

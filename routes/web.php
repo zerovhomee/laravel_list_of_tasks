@@ -10,7 +10,7 @@ use App\Http\Controllers\Post\UpdateController;
 use App\Http\Controllers\Post\ShowController;
 use App\Http\Controllers\Post\DestroyController;
 use App\Http\Controllers\Post\StoreController;
-
+use App\Http\Controllers\Post\MyIndexController;
 
 
 Route::get('/', [App\Http\Controllers\View\ViewController::class, 'index'])->name('first_page');
@@ -23,6 +23,7 @@ Route::group([], function () {
     Route::get('/posts/{post}/edit', EditController::class)->name('posts.edit');
     Route::patch('/posts/{post}', UpdateController::class)->name('posts.update');
     Route::delete('/posts/{post}', DestroyController::class)->name('posts.destroy');
+    Route::get('/posts/my/posts', MyIndexController::class)->name('posts.my_index');
 });
 
 
