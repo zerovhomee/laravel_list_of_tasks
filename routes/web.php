@@ -12,9 +12,8 @@ use App\Http\Controllers\Post\DestroyController;
 use App\Http\Controllers\Post\StoreController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [App\Http\Controllers\View\ViewController::class, 'index'])->name('first_page');
 
 Route::group([], function () {
     Route::get('/posts', IndexController::class)->name('posts.index');
@@ -25,4 +24,10 @@ Route::group([], function () {
     Route::patch('/posts/{post}', UpdateController::class)->name('posts.update');
     Route::delete('/posts/{post}', DestroyController::class)->name('posts.destroy');
 });
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
