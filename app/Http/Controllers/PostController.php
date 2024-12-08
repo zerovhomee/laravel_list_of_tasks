@@ -19,9 +19,9 @@ class PostController extends Controller
 
     public function store(){
         $data = request()->validate([
-            'title' => 'string|required',
-            'description' => 'string|required',
-            'date' => 'date|required',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'date' => 'required|date',
         ]);
         Post::create($data);
         return redirect()->route('posts.index');
@@ -37,9 +37,9 @@ class PostController extends Controller
 
     public function update(Post $post){
         $data = request()->validate([
-            'title' => 'string|required',
-            'description' => 'string|required',
-            'date' => 'date|required',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'date' => 'required|date',
         ]);
         $post -> update($data);
         return redirect()->route('posts.show', $post->id);
